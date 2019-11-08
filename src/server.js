@@ -14,6 +14,7 @@ class Server {
     }
 
     _views() {
+        this.server.use(express.static(path.join(__dirname + '/app/public')));
         this.server.set('views', path.join(__dirname + '/app/views'));
         this.server.set('view engine', 'pug');
     }

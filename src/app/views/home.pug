@@ -1,5 +1,45 @@
+doctype html
 html
   head
-    title= title
-  body
-    h1= message
+    title= "Lar do Dev"
+    link(rel="stylesheet", href="/css/bootstrap.min.css")
+  body(style="margin-top: 10px;")
+    div.container
+      div.row
+        div.col-xl-12
+          div.jumbotron
+            h1.display-4= "Cadastrar Curso"
+            hr.my-4
+            form(action="" metho="post")
+              div.form-group
+                label(for="nome")
+                input(type="text" class="form-control" id="nome" placeholder="Preencha o nome")
+
+              div
+                select(class="form-control")
+                  option= "Selecione um tipo"
+                  option= "Back-End"
+                  option= "Front-End"
+                  option= "Mobile"
+                  option= "Data Science"
+                  option= "Infraestrutura"
+              
+              br
+              input(type="submit" class="btn btn-success" value="Salvar")
+
+      div.row
+        div.col-xl-12
+
+          each curso in cursos
+            div.card
+              div.card-body 
+                p
+                  span(class="font-weight-bold")="Nome: "
+                  = curso.nome
+                p
+                  span(class="font-weight-bold")="Tipo: "
+                  = curso.tipo
+
+    script(src="/js/jquery-3.3.1.slim.min.js")
+    script(src="/js/popper.min.js")
+    script(src="/js/bootstrap.min.js")

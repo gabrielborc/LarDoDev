@@ -1,7 +1,9 @@
+const CursoModel = require('../models/CursoModel');
+
 class HomeController {
 
     index(req, res) {
-        res.render('home', { title: 'Hey', message: 'Hello there!'});
+        res.render('home', {cursos: CursoModel.findAll()});
     }
 
 }
